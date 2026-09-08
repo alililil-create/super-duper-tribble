@@ -1,7 +1,0 @@
-print("first commit")
-print("second commit -b ls")
-<<<<<<< HEAD
-print("third commit -b ls")
-=======
-print("third commit -b ls1")
->>>>>>> ls1

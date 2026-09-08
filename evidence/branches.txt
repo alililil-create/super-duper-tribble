@@ -1,8 +1,0 @@
-git branch -a
-ls
-  ls1
-* main
-  remotes/origin/HEAD -> origin/main
-  remotes/origin/ls
-  remotes/origin/ls1
-  remotes/origin/main

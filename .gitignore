@@ -1,3 +1,5 @@
 .venv/
 __pycache__/
 *.pyc
+evidence/
+作业过程.md
