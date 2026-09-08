@@ -1,0 +1,17 @@
+git log --oneline --graph --all
+* 3db251c Implement Item model and validate FastAPI HTTP endpoints
+* 380c005 Implement FastAPI GET query and path parameters
+*   f2c928b Resolve ls1 merge conflict by keeping both messages
+|\  
+| * a88825d third commit -b ls1
+* |   793c90d Merge ls third commit
+|\ \  
+| |/  
+|/|   
+| * 36e3545 third commit -b ls
+* | 7dba741 Merge ls second commit
+|\| 
+| * 4d110e3 second commit -b ls
+|/  
+* cd8c909 Initialize backend for Git exercise
+* c53b401 Initial commit

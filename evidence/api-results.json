@@ -1,0 +1,222 @@
+[
+  {
+    "method": "GET",
+    "url": "/",
+    "request": null,
+    "status": 200,
+    "response": {
+      "Hello": "World"
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/item?item_id=2",
+    "request": null,
+    "status": 200,
+    "response": {
+      "item_id": 2
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/item2/2",
+    "request": null,
+    "status": 200,
+    "response": {
+      "item_id": 2
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/item",
+    "request": null,
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "query",
+            "item_id"
+          ],
+          "msg": "Field required",
+          "input": null
+        }
+      ]
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/item2/abc",
+    "request": null,
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "int_parsing",
+          "loc": [
+            "path",
+            "item_id"
+          ],
+          "msg": "Input should be a valid integer, unable to parse string as an integer",
+          "input": "abc"
+        }
+      ]
+    },
+    "passed": true
+  },
+  {
+    "method": "POST",
+    "url": "/item3",
+    "request": {
+      "name": "书本",
+      "price": 12.5
+    },
+    "status": 200,
+    "response": {
+      "name": "书本",
+      "price": 1012.5,
+      "is_offer": false
+    },
+    "passed": true
+  },
+  {
+    "method": "POST",
+    "url": "/item3",
+    "request": {
+      "name": "书本",
+      "price": "bad"
+    },
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "float_parsing",
+          "loc": [
+            "body",
+            "price"
+          ],
+          "msg": "Input should be a valid number, unable to parse string as a number",
+          "input": "bad"
+        }
+      ]
+    },
+    "passed": true
+  },
+  {
+    "method": "POST",
+    "url": "/items",
+    "request": {
+      "name": "缺少价格"
+    },
+    "status": 422,
+    "response": {
+      "detail": [
+        {
+          "type": "missing",
+          "loc": [
+            "body",
+            "price"
+          ],
+          "msg": "Field required",
+          "input": {
+            "name": "缺少价格"
+          }
+        }
+      ]
+    },
+    "passed": true
+  },
+  {
+    "method": "POST",
+    "url": "/items",
+    "request": {
+      "name": "书本",
+      "price": 12.5
+    },
+    "status": 200,
+    "response": {
+      "message": "新增成功",
+      "item": {
+        "id": 3,
+        "name": "书本",
+        "price": 12.5,
+        "is_offer": false
+      }
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/items/3",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": 3,
+      "name": "书本",
+      "price": 12.5,
+      "is_offer": false
+    },
+    "passed": true
+  },
+  {
+    "method": "PUT",
+    "url": "/items/3",
+    "request": {
+      "name": "课本",
+      "price": 20,
+      "is_offer": true
+    },
+    "status": 200,
+    "response": {
+      "message": "修改成功",
+      "item": {
+        "id": 3,
+        "name": "课本",
+        "price": 20.0,
+        "is_offer": true
+      }
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/items/3",
+    "request": null,
+    "status": 200,
+    "response": {
+      "id": 3,
+      "name": "课本",
+      "price": 20.0,
+      "is_offer": true
+    },
+    "passed": true
+  },
+  {
+    "method": "GET",
+    "url": "/items/999",
+    "request": null,
+    "status": 404,
+    "response": {
+      "detail": "商品不存在"
+    },
+    "passed": true
+  },
+  {
+    "method": "PUT",
+    "url": "/items/999",
+    "request": {
+      "name": "课本",
+      "price": 20
+    },
+    "status": 404,
+    "response": {
+      "detail": "商品不存在"
+    },
+    "passed": true
+  }
+]

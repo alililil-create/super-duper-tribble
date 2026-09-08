@@ -1,0 +1,9 @@
+第一次推送的实际终端输出（Git 分支与冲突阶段）：
+git push -u origin main ls ls1
+To https://github.com/alililil-create/super-duper-tribble.git
+   c53b401..f2c928b  main -> main
+ * [new branch]      ls -> ls
+ * [new branch]      ls1 -> ls1
+branch 'main' set up to track 'origin/main'.
+branch 'ls' set up to track 'origin/ls'.
+branch 'ls1' set up to track 'origin/ls1'.

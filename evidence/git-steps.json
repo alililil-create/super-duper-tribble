@@ -1,0 +1,152 @@
+[
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git status --short --branch",
+    "exit_code": 0,
+    "output": "## main...origin/main\n"
+  },
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git branch -a",
+    "exit_code": 0,
+    "output": "* main\n  remotes/origin/HEAD -> origin/main\n  remotes/origin/main\n"
+  },
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git add .gitignore backend/main.py",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git commit -m Initialize backend for Git exercise",
+    "exit_code": 0,
+    "output": "[main cd8c909] Initialize backend for Git exercise\n 2 files changed, 4 insertions(+)\n create mode 100644 .gitignore\n create mode 100644 backend/main.py\n"
+  },
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git checkout -b ls",
+    "exit_code": 0,
+    "output": "Switched to a new branch 'ls'\n"
+  },
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git add backend/main.py",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "time": "2026-09-08T14:52:09",
+    "command": "git commit -m second commit -b ls",
+    "exit_code": 0,
+    "output": "[ls 4d110e3] second commit -b ls\n 1 file changed, 1 insertion(+)\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git branch -a",
+    "exit_code": 0,
+    "output": "* ls\n  main\n  remotes/origin/HEAD -> origin/main\n  remotes/origin/main\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git checkout main",
+    "exit_code": 0,
+    "output": "Your branch is ahead of 'origin/main' by 1 commit.\n  (use \"git push\" to publish your local commits)\nSwitched to branch 'main'\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git merge --no-ff ls -m Merge ls second commit",
+    "exit_code": 0,
+    "output": "Merge made by the 'ort' strategy.\n backend/main.py | 1 +\n 1 file changed, 1 insertion(+)\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git checkout -b ls1",
+    "exit_code": 0,
+    "output": "Switched to a new branch 'ls1'\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git add backend/main.py",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git commit -m third commit -b ls1",
+    "exit_code": 0,
+    "output": "[ls1 a88825d] third commit -b ls1\n 1 file changed, 1 insertion(+)\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git checkout ls",
+    "exit_code": 0,
+    "output": "Switched to branch 'ls'\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git add backend/main.py",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git commit -m third commit -b ls",
+    "exit_code": 0,
+    "output": "[ls 36e3545] third commit -b ls\n 1 file changed, 1 insertion(+)\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git checkout main",
+    "exit_code": 0,
+    "output": "Your branch is ahead of 'origin/main' by 3 commits.\n  (use \"git push\" to publish your local commits)\nSwitched to branch 'main'\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git merge --no-ff ls -m Merge ls third commit",
+    "exit_code": 0,
+    "output": "Merge made by the 'ort' strategy.\n backend/main.py | 1 +\n 1 file changed, 1 insertion(+)\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git merge ls1",
+    "exit_code": 1,
+    "output": "Auto-merging backend/main.py\nCONFLICT (content): Merge conflict in backend/main.py\nAutomatic merge failed; fix conflicts and then commit the result.\n"
+  },
+  {
+    "time": "2026-09-08T14:52:10",
+    "command": "git status",
+    "exit_code": 0,
+    "output": "On branch main\nYour branch is ahead of 'origin/main' by 5 commits.\n  (use \"git push\" to publish your local commits)\n\nYou have unmerged paths.\n  (fix conflicts and run \"git commit\")\n  (use \"git merge --abort\" to abort the merge)\n\nUnmerged paths:\n  (use \"git add <file>...\" to mark resolution)\n\tboth modified:   backend/main.py\n\nUntracked files:\n  (use \"git add <file>...\" to include in what will be committed)\n\tevidence/\n\nno changes added to commit (use \"git add\" and/or \"git commit -a\")\n"
+  },
+  {
+    "time": "2026-09-08T14:52:11",
+    "command": "git diff -- backend/main.py",
+    "exit_code": 0,
+    "output": "diff --cc backend/main.py\nindex caf9222,c132171..0000000\n--- a/backend/main.py\n+++ b/backend/main.py\n@@@ -1,3 -1,3 +1,7 @@@\n  print(\"first commit\")\n  print(\"second commit -b ls\")\n++<<<<<<< HEAD\n +print(\"third commit -b ls\")\n++=======\n+ print(\"third commit -b ls1\")\n++>>>>>>> ls1\n"
+  },
+  {
+    "time": "2026-09-08T14:52:11",
+    "command": "git add backend/main.py",
+    "exit_code": 0,
+    "output": ""
+  },
+  {
+    "time": "2026-09-08T14:52:11",
+    "command": "git commit -m Resolve ls1 merge conflict by keeping both messages",
+    "exit_code": 0,
+    "output": "[main f2c928b] Resolve ls1 merge conflict by keeping both messages\n"
+  },
+  {
+    "time": "2026-09-08T14:52:11",
+    "command": "git log --oneline --graph --all -12",
+    "exit_code": 0,
+    "output": "*   f2c928b Resolve ls1 merge conflict by keeping both messages\n|\\  \n| * a88825d third commit -b ls1\n* |   793c90d Merge ls third commit\n|\\ \\  \n| |/  \n|/|   \n| * 36e3545 third commit -b ls\n* | 7dba741 Merge ls second commit\n|\\| \n| * 4d110e3 second commit -b ls\n|/  \n* cd8c909 Initialize backend for Git exercise\n* c53b401 Initial commit\n"
+  },
+  {
+    "time": "2026-09-08T14:52:11",
+    "command": "git status --short --branch",
+    "exit_code": 0,
+    "output": "## main...origin/main [ahead 7]\n?? evidence/\n"
+  }
+]
