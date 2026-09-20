@@ -1,5 +1,7 @@
+.env
+.env.*
+!.env.example
 .venv/
 __pycache__/
-*.pyc
-evidence/
-作业过程.md
+*.py[cod]
+.DS_Store

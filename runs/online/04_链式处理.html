@@ -1,0 +1,27 @@
+<!doctype html><html lang="zh-CN"><meta charset="utf-8">
+<style>*{box-sizing:border-box}body{margin:0;background:#101010;color:#d4d4d4;font:23px/1.65 Consolas,"Microsoft YaHei",monospace}
+main{padding:26px 34px 32px;width:1600px}header{display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid #383838;padding-bottom:15px;margin-bottom:20px;color:#eee}
+small{font:16px/1.4 "Microsoft YaHei",sans-serif;color:#dfb66b}pre{margin:0;white-space:pre-wrap;overflow-wrap:anywhere}footer{font:15px/1.6 "Microsoft YaHei",sans-serif;color:#858585;border-top:1px solid #303030;margin-top:22px;padding-top:12px}</style>
+<main><header>04 / 链式处理<small>千问在线运行</small></header><pre>&gt; python .\examples\06_langchain_chain.py
+
+[在线运行] 模型：qwen-plus
+
+chain = prompt | llm | parser
+链的输出结果：
+机器学习是人工智能的分支，让计算机从数据中自动学习规律与模式，无需显式编程。通过训练样本（如图像、文本、数值），模型调整内部参数以优化预测或决策能力。常见类型包括监督学习（有标签）、无监督学习（无标签）和强化学习（基于反馈）。广泛应用于推荐系统、图像识别、自然语言处理等领域。
+
+[进程退出码：0]
+
+&gt; python .\examples\07_langchain_long_chain.py
+
+[在线运行] 模型：qwen-plus
+
+chain = prompt | llm | parser | add_separator | count_words
+扩展链的输出（5 个组件）：
+==================================================
+Python：编程界的“懒人福音”！缩进即法律，冒号是仪式感，写个“Hello World”比泡面还快。它不强制你打括号，但会温柔地用空格“绑架”你的代码格式。库多得像超市货架——想爬虫？有！想AI？有！想自动给老板发邮件说“我病了”？……呃，这个得自己写（但真有人干过）。人生苦短，我用Python！ 😎
+==================================================
+正文字符数：151（含标点，不含空白与分隔线）
+
+[进程退出码：0]
+</pre><footer>实际执行日志的终端风格页面截图 · 原始输出见同名 TXT · 2026-09-19T17:14:23+08:00</footer></main></html>

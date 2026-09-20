@@ -1,0 +1,86 @@
+[
+  {
+    "script": "class1.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\class1.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:46+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  },
+  {
+    "script": "class2_temperature.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\class2_temperature.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:48+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  },
+  {
+    "script": "class3_memory.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\class3_memory.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:49+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  },
+  {
+    "script": "06_langchain_chain.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\06_langchain_chain.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:51+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  },
+  {
+    "script": "07_langchain_long_chain.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\07_langchain_long_chain.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:52+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  },
+  {
+    "script": "class5_calc_tool.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\class5_calc_tool.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:54+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  },
+  {
+    "script": "class6_time_tool.py",
+    "command": [
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\work\\venv\\Scripts\\python.exe",
+      "-u",
+      "C:\\Users\\Administrator\\Documents\\Codex\\2026-09-19\\new-chat\\outputs\\langgraph-tutorial\\examples\\class6_time_tool.py",
+      "--offline"
+    ],
+    "started": "2026-09-19T17:04:55+08:00",
+    "exit_code": 0,
+    "mode": "offline"
+  }
+]

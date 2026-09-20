@@ -1,0 +1,10 @@
+[project]
+name = "langchain-qwen-examples"
+version = "0.1.0"
+description = "LangChain 与千问课堂示例"
+requires-python = ">=3.11"
+dependencies = ["langchain-core>=1.0,<2", "langchain-openai>=1.0,<2", "python-dotenv>=1.0,<2", "tzdata>=2025.1"]
+
+[dependency-groups]
+capture = ["playwright>=1.50,<2"]
+

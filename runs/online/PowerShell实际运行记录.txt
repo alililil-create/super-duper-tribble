@@ -1,0 +1,141 @@
+﻿**********************
+Windows PowerShell 脚本开始
+开始时间: 20260919172059
+用户名: HJHDEXIAODIANNA\CodexSandboxOnline
+RunAs 用户: HJHDEXIAODIANNA\CodexSandboxOnline
+配置名称: 
+计算机: HJHDEXIAODIANNA (Microsoft Windows NT 10.0.26200.0)
+主机应用程序: C:\Windows\System32\WindowsPowerShell\v1.0\powershell.exe -NoLogo -NoExit -ExecutionPolicy Bypass -File C:/Users/Administrator/Documents/Codex/2026-09-19/new-chat/outputs/langgraph-tutorial/终端运行.ps1 -PythonPath C:/Users/Administrator/Documents/Codex/2026-09-19/new-chat/work/venv/Scripts/python.exe
+进程 ID: 51920
+PSVersion: 5.1.26100.9444
+PSEdition: Desktop
+PSCompatibleVersions: 1.0, 2.0, 3.0, 4.0, 5.0, 5.1.26100.9444
+BuildVersion: 10.0.26100.9444
+CLRVersion: 4.0.30319.42000
+WSManStackVersion: 3.0
+PSRemotingProtocolVersion: 2.3
+SerializationVersion: 1.1.0.1
+**********************
+已启动脚本，输出文件为 C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial\runs\online\PowerShell实际运行记录.txt
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\class1.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+你你好好！！我我是是一一个个友友善善、、乐乐于于助助人人的的AI助助手手，，随随时时准准备备为为你你解解答答问问题题、、提提供供帮帮助助或或陪陪你你聊聊聊聊～～ ��
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\class2_temperature.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+【【Temperature = 0.0】】最最保保守守
+==================================================
+智智享享每每一一口口，，冷冷暖暖自自知知，，干干渴渴不不候候。。
+==================================================
+
+【【Temperature = 0.7】】中中等等创创意意
+==================================================
+智智享享温温润润，，提提醒醒每每一一口口恰恰到到好好处处的的水水。。
+==================================================
+
+【【Temperature = 1.5】】高高创创意意（（放放飞飞自自我我））
+==================================================
+智智饮饮有有度度，，温温润润如如初初————您您的的全全天天候候健健康康饮饮水水管管家家
+==================================================
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\class3_memory.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+[SystemMessage] 你你是是餐餐厅厅服服务务员员，，礼礼貌貌简简洁洁，，记记住住用用户户点点的的菜菜。。此此为为教教学学模模拟拟点点餐餐，，不不连连接接真真实实餐餐厅厅。。
+[HumanMessage] 你你好好，，我我想想点点餐餐
+[AIMessage] 您您好好！！欢欢迎迎光光临临～～请请问问今今天天想想点点些些什什么么呢呢？？我我可可以以帮帮您您记记录录。。
+[HumanMessage] 来来一一份份宫宫保保鸡鸡丁丁
+[AIMessage] 好好的的，，一一份份宫宫保保鸡鸡丁丁，，已已记记下下。。还还需需要要其其他他菜菜品品吗吗？？��
+[HumanMessage] 再再来来一一碗碗米米饭饭
+[AIMessage] 好好的的，，加加一一碗碗米米饭饭。。目目前前您您点点了了：：
+✅✅ 宫宫保保鸡鸡丁丁
+✅✅ 米米饭饭
+
+请请问问还还需需要要其其他他菜菜品品、、饮饮料料或或汤汤类类吗吗？？
+[HumanMessage] 帮帮我我看看看看我我都都点点了了什什么么
+[AIMessage] 当当然然可可以以！！您您目目前前点点的的有有：：
+�� 宫宫保保鸡鸡丁丁
+�� 米米饭饭
+
+需需要要我我帮帮您您加加菜菜、、修修改改，，或或现现在在为为您您确确认认下下单单吗吗？？��
+[HumanMessage] 就就这这些些了了，，帮帮我我下下单单
+[AIMessage] 好好的的，，已已为为您您确确认认下下单单：：
+✅✅ 宫宫保保鸡鸡丁丁
+✅✅ 米米饭饭
+
+感感谢谢您您的的点点餐餐！！祝祝您您用用餐餐愉愉快快～～ ��✨✨
+（（温温馨馨提提示示：：本本为为教教学学模模拟拟，，不不连连接接真真实实厨厨房房哦哦））
+
+历历史史消消息息数数：：11（（1 条条系系统统消消息息 + 5 轮轮问问答答））
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\06_langchain_chain.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+chain = prompt | llm | parser
+链链的的输输出出结结果果：：
+机机器器学学习习是是人人工工智智能能的的分分支支，，让让计计算算机机从从数数据据中中自自动动学学习习规规律律与与模模式式，，无无需需显显式式编编程程。。通通过过训训练练样样本本（（如如图图像像、、文文本本、、数数值值）），，模模型型调调整整
+内内部部参参数数以以优优化化预预测测或或决决策策能能力力。。常常见见类类型型包包括括监监督督学学习习（（有有标标签签））、、无无监监督督学学习习（（无无标标签签））和和强强化化学学习习（（基基于于反反馈馈））。。广广泛泛应应用用于于推推荐荐
+系系统统、、图图像像识识别别、、自自然然语语言言处处理理等等领领域域。。
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\07_langchain_long_chain.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+chain = prompt | llm | parser | add_separator | count_words
+扩扩展展链链的的输输出出（（5 个个组组件件））：：
+==================================================
+Python：：编编程程界界的的““懒懒人人福福音音””！！缩缩进进即即法法律律，，冒冒号号是是仪仪式式感感，，写写个个““print('Hello')””比比煮煮泡泡面面还还快快。。库库多多得得像像超超市市货货架架————想想爬爬虫虫？？
+有有！！想想AI？？有有！！想想画画图图？？还还有有！！唯唯一一危危险险：：容容易易上上瘾瘾，，继继而而看看其其他他语语言言像像在在读读甲甲骨骨文文…………（（小小声声：：别别告告诉诉Java，，它它还还在在配配环环境境变变量量呢呢 ��
+））
+==================================================
+正正文文字字符符数数：：133（（含含标标点点，，不不含含空空白白与与分分隔隔线线））
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\class5_calc_tool.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+==================================================
+测测试试1：：简简单单加加法法
+==================================================
+问问题题：：请请帮帮我我计计算算 125 + 378
+调调用用工工具具：：calculator
+工工具具参参数数：：{'expression': '125 + 378'}
+工工具具返返回回：：计计算算结结果果：：125 + 378 = 503
+最最终终回回答答：：125 + 378 = 503
+
+==================================================
+测测试试2：：复复杂杂运运算算
+==================================================
+问问题题：：请请帮帮我我计计算算 (15 + 27) * 3 - 18 / 2
+调调用用工工具具：：calculator
+工工具具参参数数：：{'expression': '(15 + 27) * 3 - 18 / 2'}
+工工具具返返回回：：计计算算结结果果：：(15 + 27) * 3 - 18 / 2 = 117.0
+最最终终回回答答：：计计算算结结果果是是：：117.0
+
+PS C:\Users\Administrator\Documents\Codex\2026-09-19\new-chat\outputs\langgraph-tutorial> python .\examples\class6_time_tool.py
+[在在线线运运行行] 模模型型：：qwen-plus
+
+==================================================
+测测试试1：：获获取取当当前前时时间间
+==================================================
+问问题题：：现现在在几几点点了了？？
+调调用用工工具具：：get_current_time
+工工具具参参数数：：{}
+工工具具返返回回：：当当前前时时间间：：2026年年09月月19日日 17:21:28（（北北京京时时间间））
+最最终终回回答答：：现现在在是是2026年年9月月19日日17点点21分分28秒秒（（北北京京时时间间））。。
+
+==================================================
+测测试试2：：获获取取星星期期几几
+==================================================
+问问题题：：今今天天是是星星期期几几？？
+调调用用工工具具：：get_weekday
+工工具具参参数数：：{}
+工工具具返返回回：：今今天天是是：：星星期期六六
+最最终终回回答答：：今今天天是是星星期期六六。。
+
+全部 7 个示例在线运行完成。可向上滚动查看完整过程。
+**********************
+Windows PowerShell 脚本结束
+结束时间: 20260919172130
+**********************
