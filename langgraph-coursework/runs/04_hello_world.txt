@@ -1,0 +1,7 @@
+=== 04 第一个 LangGraph 图：Hello World ===
+执行路径：START -> hello -> END
+初始 State： {'message': ''}
+最终 State： {'message': 'Hello LangGraph!'}
+message 字段： Hello LangGraph!
+
+退出码：0

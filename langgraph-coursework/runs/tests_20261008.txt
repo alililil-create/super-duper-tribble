@@ -1,0 +1,74 @@
+......................
+----------------------------------------------------------------------
+Ran 22 tests in 0.131s
+
+OK
+[generate] 调用千问生成SQL
+[classify] 意图：complaint
+[handle_complaint] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_complaint] 第 2 次处理
+[assess] 模型自检：合格
+[classify] 分类结果： greeting
+[greet] 正在处理
+[classify] 分类结果： question
+[answer] 正在处理
+[classify] 分类结果： calculate
+[calculator] 正在处理
+[generate] 调用千问生成客服回复
+[generate] 调用千问生成客服回复
+[generate] 第 1 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[generate] 第 2 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：合格
+[generate] 第 1 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[generate] 第 2 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[generate] 第 3 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[write] 开始：A
+[write] 开始：B
+[write] 开始：C
+[write] 完成：C
+[write] 完成：A
+[write] 完成：B
+[generate] 调用千问生成SQL
+[generate] 调用千问生成SQL
+[classify] 意图：consult
+[handle_consult] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 2 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 3 次处理
+[assess] 模型自检：合格
+[classify] 意图：consult
+[handle_consult] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 2 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 3 次处理
+[assess] 模型自检：不合格
+[generate] 调用千问生成SQL
+分类结果：calculate
+分类结果：chat

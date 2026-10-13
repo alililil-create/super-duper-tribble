@@ -1,0 +1,23 @@
+
+命令参数：start --thread verify-97cc47e832e9
+[generate] 调用千问生成SQL
+已保存暂停检查点： {'待审核内容': 'SELECT name, age FROM users WHERE age > 18;', '提示': '输入 yes 同意 / no 拒绝'}
+进程可以关闭。下次使用相同 --thread 执行 resume。
+数据库： D:\Codex\2026-09-20\langgraph-core\data\checkpoints.sqlite
+
+退出码：0
+
+命令参数：resume --thread verify-97cc47e832e9 --decision yes
+从磁盘恢复，已有草稿： SELECT name, age FROM users WHERE age > 18;
+命令行测试审批输入： yes
+教学数据库真实查询结果：[('张三', 20), ('王五', 25)]
+数据库： D:\Codex\2026-09-20\langgraph-core\data\checkpoints.sqlite
+
+退出码：0
+
+命令参数：show --thread verify-97cc47e832e9
+当前磁盘存档： {'question': '查询年龄大于18岁的用户姓名和年龄', 'draft': 'SELECT name, age FROM users WHERE age > 18;', 'approved': True, 'result': "教学数据库真实查询结果：[('张三', 20), ('王五', 25)]"}
+待执行节点： ()
+数据库： D:\Codex\2026-09-20\langgraph-core\data\checkpoints.sqlite
+
+退出码：0

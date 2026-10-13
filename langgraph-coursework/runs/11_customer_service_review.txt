@@ -1,0 +1,13 @@
+
+命令参数：--decision no
+[classify] 意图：complaint
+[handle_complaint] 第 1 次处理
+客服回复待审核： {'工单号': 'LOCAL-f3be1594f208', '回复草稿': '非常抱歉给您带来不便！请您提供订单号和划痕照片，我们将立即核实并为您安排换货或退款。', '提示': '输入yes批准，no拒绝并转人工'}
+命令行测试审核输入： no
+审核状态： rejected
+最终状态： 待人工处理（本地记录）
+重试次数： 0
+回复未通过审核，已记录为待人工处理。
+实际节点： classify -> handle_complaint -> review -> handoff
+
+退出码：0

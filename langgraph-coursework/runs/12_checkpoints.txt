@@ -1,0 +1,24 @@
+
+命令参数：
+[process] 真实调用千问
+
+会话： zhangsan
+当前状态： {'user_input': '用一句话解释人工智能', 'processed': '人工智能是让机器模拟人类智能行为（如学习、推理、识别）的技术。', 'final_output': '人工智能是让机器模拟人类智能行为（如学习、推理、识别）的技术。'}
+历史 0：{'user_input': '用一句话解释人工智能', 'processed': '人工智能是让机器模拟人类智能行为（如学习、推理、识别）的技术。', 'final_output': '人工智能是让机器模拟人类智能行为（如学习、推理、识别）的技术。'}；待执行：()
+历史 1：{'user_input': '用一句话解释人工智能', 'processed': '人工智能是让机器模拟人类智能行为（如学习、推理、识别）的技术。'}；待执行：('output',)
+历史 2：{'user_input': '用一句话解释人工智能'}；待执行：('process',)
+历史 3：{'user_input': '用一句话解释人工智能'}；待执行：('input',)
+历史 4：{}；待执行：('__start__',)
+[process] 真实调用千问
+
+会话： lisi
+当前状态： {'user_input': '用一句话解释LangGraph', 'processed': 'LangGraph 是一个用于构建基于图的、有状态、可循环的 LLM 应用程序的 Python 框架，支持多步骤、带记忆和条件逻辑的智能工作流。', 'final_output': 'LangGraph 是一个用于构建基于图的、有状态、可循环的 LLM 应用程序的 Python 框架，支持多步骤、带记忆和条件逻辑的智能工作流。'}
+历史 0：{'user_input': '用一句话解释LangGraph', 'processed': 'LangGraph 是一个用于构建基于图的、有状态、可循环的 LLM 应用程序的 Python 框架，支持多步骤、带记忆和条件逻辑的智能工作流。', 'final_output': 'LangGraph 是一个用于构建基于图的、有状态、可循环的 LLM 应用程序的 Python 框架，支持多步骤、带记忆和条件逻辑的智能工作流。'}；待执行：()
+历史 1：{'user_input': '用一句话解释LangGraph', 'processed': 'LangGraph 是一个用于构建基于图的、有状态、可循环的 LLM 应用程序的 Python 框架，支持多步骤、带记忆和条件逻辑的智能工作流。'}；待执行：('output',)
+历史 2：{'user_input': '用一句话解释LangGraph'}；待执行：('process',)
+历史 3：{'user_input': '用一句话解释LangGraph'}；待执行：('input',)
+历史 4：{}；待执行：('__start__',)
+
+会话隔离验证通过，内存检查点在进程关闭后失效。
+
+退出码：0

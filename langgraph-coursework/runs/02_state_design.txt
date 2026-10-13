@@ -1,0 +1,12 @@
+=== 02 状态设计 ===
+class State(TypedDict):
+    message: Annotated[list[str], add]
+    user_query: str
+    results: str
+状态快照 0：{'message': [], 'user_query': '测试状态合并', 'results': ''}
+状态快照 1：{'message': ['你好，我是 AI 助手'], 'user_query': '测试状态合并', 'results': '节点一完成'}
+状态快照 2：{'message': ['你好，我是 AI 助手', '请问有什么可以帮助你？'], 'user_query': '测试状态合并', 'results': '节点二完成'}
+message 追加两条消息；results 被第二个值覆盖；user_query 保留。
+注意：TypedDict 负责类型描述，不负责运行时自动校验。
+
+退出码：0

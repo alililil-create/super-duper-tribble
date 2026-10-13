@@ -1,0 +1,44 @@
+先打开 PowerShell，复制下面两行：
+
+cd D:\Codex\2026-09-20\langgraph-core
+$env:PYTHONIOENCODING='utf-8'
+
+然后逐项复制下面的命令。每项运行结束后截图，输入 cls 可清屏。
+命令末尾没有反引号、引号或竖线。
+
+1. 智能问数助手
+.\.venv\Scripts\python.exe .\examples\class25_smart_query.py
+
+2. 流式输出 updates（每个节点的增量更新）
+.\.venv\Scripts\python.exe .\examples\class26_stream_updates.py
+
+3. 流式输出 values（初始状态及每步完整状态）
+.\.venv\Scripts\python.exe .\examples\class27_stream_values.py
+
+4. 流式输出 custom（状态事件和真实模型文本流）
+.\.venv\Scripts\python.exe .\examples\class28_stream_custom.py
+
+5. 子图设计（主题 -> 标题 -> 文章）
+.\.venv\Scripts\python.exe .\examples\class29_subgraph.py
+
+6. 客服子图改造（投诉进入子图，咨询走主图）
+.\.venv\Scripts\python.exe .\examples\class30_cs_subgraph.py
+
+一次运行本次六项并保存日志：
+.\.venv\Scripts\python.exe .\run_project.py
+
+自定义问数问题示例：
+.\.venv\Scripts\python.exe .\examples\class25_smart_query.py --question "哪个商品的销售总额最高？"
+
+注意：三张表为课程示例数据，不是真实商业数据。初始化时将讲义订单日期调整至运行时的上个月和当月；屏幕会显示实际日期范围。
+首次运行自动创建 data/ecommerce_demo_年月.sqlite；重复运行不会清空数据。压缩包不含数据库或密钥，解压后可重新生成数据库。
+华北上月销售额应为6898；北京用户全部订单金额应为7297。内置三例会核对实际查询结果。
+SQL通过只读连接、数据库授权器及EXPLAIN QUERY PLAN检查，语法/字段错误最多修正3次；查询最多显示200行。
+custom收到的是API真实返回的文本块；块不一定恰好是一个字，网络缓冲也会影响显示速度。
+两个子图示例确实将compile后的子图作为父图节点使用，共享状态字段回传给父图。
+这次按图片完成六个终端模块，未进行公网部署。08讲义的FastAPI/SSE服务可在后续部署作业中继续扩展。
+
+测试：
+.\.venv\Scripts\python.exe -m unittest discover -p "test_*.py"
+
+新电脑先安装Python3.11以上和uv，在项目目录执行uv sync --locked，复制.env.example为.env并填写千问密钥。不要把.env上传GitHub。

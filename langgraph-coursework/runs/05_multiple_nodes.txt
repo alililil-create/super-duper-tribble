@@ -1,0 +1,15 @@
+=== 05 多个节点执行输出 ===
+A. 讲义双节点：START -> hello -> goodbye -> END
+状态 0：{'message': ''}
+状态 1：{'message': 'Hello LangGraph!'}
+状态 2：{'message': 'Goodbye!'}
+最终 message 是 Goodbye!，后写的字符串覆盖前值。
+
+B. 图片状态三节点：START -> hello -> process -> goodbye -> END
+[初始] message=[]; results=''
+[hello 执行后] message=['Hello LangGraph!']; results='Hello LangGraph!'
+[process 执行后] message=['Hello LangGraph!', '处理节点收到：Hello LangGraph!']; results='已处理用户问题：学习 LangGraph'
+[goodbye 执行后] message=['Hello LangGraph!', '处理节点收到：Hello LangGraph!', 'Goodbye!']; results='Goodbye!'
+最终保留三个节点的消息；results 为 Goodbye!。
+
+退出码：0

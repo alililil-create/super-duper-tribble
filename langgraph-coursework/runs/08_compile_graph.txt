@@ -1,0 +1,18 @@
+编译成功：START -> add_info -> print_info -> END
+
+=== invoke：同步返回最终状态 ===
+初始状态： {'message': '你好', 'output': ''}
+[add_info] 写入 output：你好，欢迎学习 LangGraph！
+[print_info] 读取 output：你好，欢迎学习 LangGraph！
+最终状态： {'message': '你好', 'output': '你好，欢迎学习 LangGraph！'}
+
+=== ainvoke：异步返回最终状态 ===
+[add_info] 写入 output：你好，欢迎学习 LangGraph！
+[print_info] 读取 output：你好，欢迎学习 LangGraph！
+{'message': '你好', 'output': '你好，欢迎学习 LangGraph！'}
+
+=== astream：按节点输出更新 ===
+[add_info] 写入 output：你好，欢迎学习 LangGraph！
+节点更新： {'add_info': {'output': '你好，欢迎学习 LangGraph！'}}
+[print_info] 读取 output：你好，欢迎学习 LangGraph！
+节点更新： {'print_info': None}

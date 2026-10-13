@@ -1,0 +1,118 @@
+...............................
+----------------------------------------------------------------------
+Ran 31 tests in 0.268s
+
+OK
+[generate] 调用千问生成SQL
+[classify] 意图：complaint
+[handle_complaint] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_complaint] 第 2 次处理
+[assess] 模型自检：合格
+[classify] 分类结果： greeting
+[greet] 正在处理
+[classify] 分类结果： question
+[answer] 正在处理
+[classify] 分类结果： calculate
+[calculator] 正在处理
+[generate] 调用千问生成客服回复
+[generate] 调用千问生成客服回复
+[generate] 第 1 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[generate] 第 2 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：合格
+[generate] 第 1 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[generate] 第 2 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[generate] 第 3 次生成：
+春风吹柳绿
+细雨润花红
+燕子穿云去
+新芽向日生
+[check] 质量：不合格
+[write] 开始：A
+[write] 开始：B
+[write] 开始：C
+[write] 完成：C
+[write] 完成：A
+[write] 完成：B
+[generate] 调用千问生成SQL
+[generate] 调用千问生成SQL
+[classify] 意图：consult
+[handle_consult] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 2 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 3 次处理
+[assess] 模型自检：合格
+[classify] 意图：consult
+[handle_consult] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 2 次处理
+[assess] 模型自检：不合格
+[handle_consult] 第 3 次处理
+[assess] 模型自检：不合格
+[generate] 调用千问生成SQL
+分类结果：calculate
+分类结果：chat
+[子图-节点1] 根据主题生成标题……
+[子图-节点1] 标题：标题
+[子图-节点2] 根据标题生成内容……
+[主图] 意图识别：投诉
+[子图] 投诉分类中……
+[子图] 投诉分类结果：质量
+[子图] 回复已生成
+[主图] 意图识别：咨询
+[主图] 处理咨询
+[主图] 意图识别：其他
+[主图] 处理其他
+[关键词] {"tables": ["orders"], "columns": ["amount"], "conditions": [], "metrics": ["sum"]}
+[生成SQL] SELECT missing FROM orders
+[验证失败] no such column: missing
+[修正] 第 1 次
+[生成SQL] SELECT SUM(amount) FROM orders
+[验证] SQLite语法和字段检查通过
+[真实查询结果] [(40582.0,)]
+[关键词] {"tables": ["orders"], "columns": ["amount"], "conditions": [], "metrics": ["sum"]}
+[生成SQL] SELECT bad FROM orders
+[验证失败] no such column: bad
+[修正] 第 1 次
+[生成SQL] SELECT bad FROM orders
+[验证失败] no such column: bad
+[修正] 第 2 次
+[生成SQL] SELECT bad FROM orders
+[验证失败] no such column: bad
+[修正] 第 3 次
+[生成SQL] SELECT bad FROM orders
+[验证失败] no such column: bad
+[大纲节点] 正在生成大纲……
+[写作节点] 正在写故事……
+[点评节点] 正在点评……
+[大纲节点] 正在生成大纲……
+[写作节点] 正在写故事……
+[点评节点] 正在点评……
+[classify] 意图：complaint
+[handle_complaint] 第 1 次处理
+[assess] 模型自检：不合格
+[handle_complaint] 第 2 次处理
+[analyze_intent] 正在分析问题复杂度……
+[simple_answer] 生成简洁回答……
+[analyze_intent] 正在分析问题复杂度……
+[detailed_answer] 生成详细回答……

@@ -1,0 +1,67 @@
+数据库初始化完成，3张表：products、users、orders。
+数据库： D:\Codex\2026-09-20\langgraph-core\data\ecommerce_demo_202609.sqlite
+当前日期： 2026-10-13 ；上个月范围： (datetime.date(2026, 9, 1), datetime.date(2026, 10, 1))
+数据库结构：
+[表 products]
+  product_id INTEGER
+  product_name TEXT
+  category TEXT
+  price REAL
+[表 users]
+  user_id INTEGER
+  user_name TEXT
+  gender TEXT
+  age INTEGER
+  city TEXT
+[表 orders]
+  order_id INTEGER
+  user_id INTEGER
+  product_id INTEGER
+  quantity INTEGER
+  amount REAL
+  order_date TEXT
+  region TEXT
+关联：orders.user_id=users.user_id；orders.product_id=products.product_id。城市在users.city，地区在orders.region。
+
+【问题1/3】上个月华北地区销售额是多少？
+=================================================================
+[关键词] {"tables": ["orders"], "columns": [], "conditions": ["region = '华北'", "order_date >= '2026-09-01'", "order_date < '2026-10-01'"], "metrics": ["SUM(amount)"]}
+[生成SQL] SELECT SUM(amount) FROM orders WHERE region = '华北' AND order_date >= '2026-09-01' AND order_date < '2026-10-01';
+[验证] SQLite语法和字段检查通过
+[真实查询结果] [(6898.0,)]
+最终答案：
+SUM(amount)
+6898.0
+修正次数： 0
+[核对] 与示例数据基准结果一致
+
+【问题2/3】上个月各品类销售额是多少？
+=================================================================
+[关键词] {"tables": ["orders", "products"], "columns": ["products.category"], "conditions": ["orders.order_date >= '2026-09-01' AND orders.order_date < '2026-10-01'"], "metrics": ["SUM(orders.amount)"]}
+[生成SQL] SELECT p.category, SUM(o.amount) AS total_amount
+FROM orders o
+JOIN products p ON o.product_id = p.product_id
+WHERE o.order_date >= '2026-09-01' AND o.order_date < '2026-10-01'
+GROUP BY p.category;
+[验证] SQLite语法和字段检查通过
+[真实查询结果] [('家电', 798.0), ('数码产品', 35995.0), ('服装', 1798.0), ('食品', 1592.0)]
+最终答案：
+category | total_amount
+家电 | 798.0
+数码产品 | 35995.0
+服装 | 1798.0
+食品 | 1592.0
+修正次数： 0
+[核对] 与示例数据基准结果一致
+
+【问题3/3】北京用户的订单总金额是多少？
+=================================================================
+[关键词] {"tables": ["users", "orders"], "columns": [], "conditions": ["users.city = '北京'"], "metrics": ["SUM(orders.amount)"]}
+[生成SQL] SELECT SUM(orders.amount) FROM users JOIN orders ON users.user_id = orders.user_id WHERE users.city = '北京';
+[验证] SQLite语法和字段检查通过
+[真实查询结果] [(7297.0,)]
+最终答案：
+SUM(orders.amount)
+7297.0
+修正次数： 0
+[核对] 与示例数据基准结果一致

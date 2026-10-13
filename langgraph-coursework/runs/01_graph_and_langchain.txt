@@ -1,0 +1,10 @@
+=== 01 有向图与 LangChain ===
+节点完成任务，边规定方向，State 在节点之间传递数据。
+有向图可有环；DAG 是有向无环图。
+本例路径：START -> clean -> upper -> END
+输入： '  hello langgraph  '
+LangChain LCEL 输出： HELLO LANGGRAPH
+LangGraph 输出： {'text': 'HELLO LANGGRAPH'}
+LCEL 适合组合处理步骤；LangGraph 显式定义状态、节点和流转。
+
+退出码：0
