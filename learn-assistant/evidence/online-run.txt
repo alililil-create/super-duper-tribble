@@ -1,0 +1,64 @@
+=== 阶段 0–3：真实 MySQL + 千问接口验收 ===
+运行时间：2026-10-20T08:50:22
+健康检查：{"status": "ok", "database": "mysql"}
+注册与登录成功：alice_54e188，用户 ID=4（不输出密码或令牌）
+注册与登录成功：bob_54e188，用户 ID=5（不输出密码或令牌）
+
+[文章上传] ID=2 标题=Urban Gardens and Our Community
+[文章查询] A neighborhood plans to turn an empty rooftop into a community garden. Volunteers want to grow vegetables and flowers. Some residents worry about the cost, noise, and safety. The community must agree on a budget and a weekly schedule before starting the project.
+
+[场景生成] 正在真实调用千问，请等待……
+[场景查询] 已从 MySQL 读取生成结果：
+{
+  "title": "城市屋顶花园共建计划",
+  "user_role": "社区协调员",
+  "goal": "推动居民达成共识，共同建设安全、可持续的屋顶社区花园",
+  "ai_roles": [
+    {
+      "name": "Ms. Chen",
+      "stance": "热心园艺的退休教师，支持项目但关注儿童安全与教育价值",
+      "example": "I’ve taught kids about plants for 30 years — this garden could be our outdoor classroom!"
+    },
+    {
+      "name": "Mr. Lee",
+      "stance": "顾虑预算和噪音的年轻租户，希望明确责任分担与施工时间限制",
+      "example": "Who pays if the waterproofing fails? And no drilling after 6 p.m., please."
+    }
+  ],
+  "conflict": "部分居民支持绿色倡议，但对资金来源、施工影响、长期维护责任存在分歧，尚未形成可执行方案",
+  "task_chain": [
+    {
+      "stage": "第一步：倾听关切",
+      "task": "向两位居民分别了解核心顾虑与期待",
+      "user_action": "用开放式问题询问：'您最希望这个花园带来什么？最担心什么？'"
+    },
+    {
+      "stage": "第二步：协商方案",
+      "task": "整合双方意见，提出兼顾成本、安全与时间的初步方案",
+      "user_action": "提议：启动资金众筹+物业补贴；施工限在工作日上午；增设儿童观察区与工具保管柜"
+    },
+    {
+      "stage": "第三步：达成共识",
+      "task": "引导双方确认关键条款，形成简明行动备忘录",
+      "user_action": "请他们各自复述同意的预算上限、开放时段和安全责任人，确认无异议后签字"
+    }
+  ],
+  "language_goals": "运用情态动词（should/must/could）表达建议与义务；使用连接词（however, therefore, in addition）提升逻辑性；掌握社区场景高频词：budget, schedule, maintenance, liability, accessibility",
+  "final_output": "一份中英双语《屋顶花园共建备忘录》，含三方签字栏、实施时间轴及责任分工表",
+  "difficulty": "standard",
+  "id": 2,
+  "article_id": 2,
+  "created_at": "2026-10-20T00:50:36"
+}
+
+[学习会话] ID=3
+[多用户隔离] Bob 访问 Alice /sessions/3 → 404，通过
+[多用户隔离] Bob 访问 Alice /sessions/3/messages → 404，通过
+
+[发送消息] I suggest starting with a small garden to keep costs low.
+[千问角色回复] That’s a practical idea — it could reduce initial budget pressure.  
+However, Ms. Chen might worry a small garden limits educational space for children.  
+What do you think Mr. Lee would say about scaling up later? [Hint: “scale up” → verb phrase]
+[消息持久化] 查询到用户消息与 AI 回复，共 2 条
+
+全部在线验收通过。

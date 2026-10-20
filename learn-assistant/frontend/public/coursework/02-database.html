@@ -1,0 +1,25 @@
+<!doctype html><meta charset="utf-8"><title>02 数据库会话创建</title><style>body{margin:0;background:#f2f5f8;color:#223248;font:16px Segoe UI,Microsoft YaHei,sans-serif;padding:32px}h1{font-size:27px;margin:0 0 10px}small{color:#60738a}section{background:white;border:1px solid #d8e1eb;border-radius:12px;padding:24px;margin-top:22px}pre{font:15px Consolas,Microsoft YaHei,monospace;white-space:pre-wrap;line-height:1.6}table{border-collapse:collapse;width:100%;font-size:15px}td,th{padding:13px;border:1px solid #dce3eb;text-align:left}th{background:#edf3fa}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}.step{padding:12px;border:1px solid #c2d1df;text-align:center;border-radius:7px;margin:8px 0}.arrow{text-align:center;color:#50806f}.note{color:#7c4c19;background:#fff6e7;padding:10px}pre{font-size:14px;line-height:1.25}section{padding:18px}</style><h1>02 数据库会话创建</h1><small>Learn Assistant · 本机项目 · 2026-10-20</small><section><small>实测运行记录：SQLAlchemy 连接真实 MySQL，执行 SHOW TABLES / DESCRIBE users</small><pre>MySQL database: learn_assistant
+
+SQL&gt; SHOW TABLES;
++---------------------------+
+| Tables_in_learn_assistant |
+| articles                  |
+| messages                  |
+| scenes                    |
+| sessions                  |
+| users                     |
++---------------------------+
+
+SQL&gt; DESCRIBE users;
++-----------------+--------------+------+-----+---------+----------------+
+| Field           | Type         | Null | Key | Default | Extra          |
+| id              | int          | NO   | PRI | NULL    | auto_increment |
+| username        | varchar(50)  | NO   | UNI | NULL    |                |
+| email           | varchar(100) | NO   | UNI | NULL    |                |
+| hashed_password | varchar(255) | NO   |     | NULL    |                |
+| created_at      | datetime     | NO   |     | NULL    |                |
++-----------------+--------------+------+-----+---------+----------------+
+
+SQLAlchemy: async_sessionmaker / expire_on_commit=False
+One AsyncSession per HTTP request; MySQL pool_size=10, max_overflow=20
+</pre></section>

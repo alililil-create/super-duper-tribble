@@ -1,0 +1,39 @@
+所有命令在 PowerShell 中执行，逐段复制，不要添加竖线或反引号。
+
+窗口 1：启动真实后端，保持窗口打开
+cd D:\Codex\2026-10-20\learn-assistant
+powershell -ExecutionPolicy Bypass -File .\start-backend.ps1
+
+窗口 2：启动前端，保持窗口打开
+cd D:\Codex\2026-10-20\learn-assistant
+powershell -ExecutionPolicy Bypass -File .\start-frontend.ps1
+
+浏览器打开：
+http://127.0.0.1:5173
+接口文档：
+http://127.0.0.1:8000/docs
+
+窗口 3：真实 API 验收（会创建两名测试用户、一篇文章、场景与对话；调用千问产生正常 API 用量）
+cd D:\Codex\2026-10-20\learn-assistant\backend-fastapi
+$env:PYTHONIOENCODING='utf-8'
+.\.venv\Scripts\python.exe .\scripts\demo_online.py
+
+接口设计截图：打开 /docs，展开 articles 与 scenes 接口。
+前端截图：注册自己的账号，上传英文文章，生成场景，进入场景发送英文消息。
+数据库截图：在 Workbench 执行以下 SQL（选中 SQL 再运行）：
+USE learn_assistant;
+SHOW TABLES;
+SELECT id, username, email, created_at FROM users;
+SELECT id, title, level FROM articles;
+SELECT id, article_id, title, difficulty FROM scenes;
+SELECT id, user_id, article_id, scene_id, status FROM sessions;
+SELECT id, session_id, role, content FROM messages;
+
+不截图 .env、建库脚本里的专用密码、登录响应中的 access_token。
+
+10.20 前端代码构建截图：
+cd D:\Codex\2026-10-20\learn-assistant\frontend
+pnpm build
+
+10.20 学习报告：登录后点击“我的学习会话”→“继续学习”→“查看学习报告”。
+流程图：打开 docs\学习流程图.svg。

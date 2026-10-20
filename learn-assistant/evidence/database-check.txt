@@ -1,0 +1,8 @@
+MySQL 数据表验证（真实查询）
+数据库：learn_assistant
+users: 5 rows
+articles: 2 rows
+scenes: 2 rows
+sessions: 3 rows
+messages: 6 rows
+密码哈希检查：True
