@@ -1,0 +1,113 @@
+[
+  {
+    "id": "customer-design-v1",
+    "target": "customer",
+    "name": "智能客服",
+    "version": 1,
+    "status": "draft",
+    "goal": "商品查询、上下文引用、投诉转人工",
+    "flow": "先规划 → 工具权限校验 → 参数校验 → 检索/转人工 → 证据输出",
+    "boundaries": [
+      "客服不能调用销售查询工具",
+      "商品缺失时不得捏造价格",
+      "记忆必须由可信会话上下文提供"
+    ],
+    "dataset_fingerprint": "816858daf4e5802768f5d19ecb64e737ef2eccc84621da250c68e8eb8bf0d25c",
+    "bound_cases": [
+      "customer-price",
+      "customer-markdown",
+      "customer-memory",
+      "customer-handoff",
+      "customer-injection"
+    ],
+    "actions": [
+      {
+        "component": "编排",
+        "change": "v1 单次严格 JSON 调用改为 v2 plan → validate → execute → finish 状态图；失败条件边最多三次尝试。"
+      },
+      {
+        "component": "可观测性",
+        "change": "保存原始输出、工具参数、执行结果、错误、尝试次数与节点顺序；不展示或伪造模型隐藏思维链。"
+      },
+      {
+        "component": "测评",
+        "change": "固定数据集 SHA-256 + 同输入 v1/v2 比较 + 逐条断言；人工语义校准独立进行。"
+      }
+    ],
+    "acceptance": "绑定用例全部通过；安全边界不得因改造退化。语义效果需在线 Judge 与真实人工标注后另行验收。"
+  },
+  {
+    "id": "data-design-v1",
+    "target": "data",
+    "name": "销售问数",
+    "version": 1,
+    "status": "draft",
+    "goal": "汇总、地区时间筛选、商品排行",
+    "flow": "生成 SELECT → 权限校验 → SQLite 只读执行 → 错误反馈 → 限次修复",
+    "boundaries": [
+      "只允许 sales 表及白名单聚合函数",
+      "禁止写入、ATTACH、PRAGMA 和多语句",
+      "错误 SQL 最多尝试三次，重复失败操作提前停止"
+    ],
+    "dataset_fingerprint": "816858daf4e5802768f5d19ecb64e737ef2eccc84621da250c68e8eb8bf0d25c",
+    "bound_cases": [
+      "data-total",
+      "data-filter",
+      "data-ranking",
+      "data-write",
+      "data-repair"
+    ],
+    "actions": [
+      {
+        "component": "编排",
+        "change": "v1 单次严格 JSON 调用改为 v2 plan → validate → execute → finish 状态图；失败条件边最多三次尝试。"
+      },
+      {
+        "component": "可观测性",
+        "change": "保存原始输出、工具参数、执行结果、错误、尝试次数与节点顺序；不展示或伪造模型隐藏思维链。"
+      },
+      {
+        "component": "测评",
+        "change": "固定数据集 SHA-256 + 同输入 v1/v2 比较 + 逐条断言；人工语义校准独立进行。"
+      }
+    ],
+    "acceptance": "绑定用例全部通过；安全边界不得因改造退化。语义效果需在线 Judge 与真实人工标注后另行验收。"
+  },
+  {
+    "id": "scene-design-v1",
+    "target": "scene",
+    "name": "营销场景",
+    "version": 1,
+    "status": "draft",
+    "goal": "场景目标、角色和任务步骤",
+    "flow": "素材输入 → 结构化规划 → Pydantic 校验 → 失败反馈 → 合格结果",
+    "boundaries": [
+      "至少两个角色、三个任务步骤",
+      "禁止场景工具读取销售和商品数据",
+      "无法校验时明确失败，不保存无效场景"
+    ],
+    "dataset_fingerprint": "816858daf4e5802768f5d19ecb64e737ef2eccc84621da250c68e8eb8bf0d25c",
+    "bound_cases": [
+      "scene-create",
+      "scene-markdown",
+      "scene-schema",
+      "scene-loop",
+      "scene-boundary"
+    ],
+    "actions": [
+      {
+        "component": "编排",
+        "change": "v1 单次严格 JSON 调用改为 v2 plan → validate → execute → finish 状态图；失败条件边最多三次尝试。"
+      },
+      {
+        "component": "可观测性",
+        "change": "保存原始输出、工具参数、执行结果、错误、尝试次数与节点顺序；不展示或伪造模型隐藏思维链。"
+      },
+      {
+        "component": "测评",
+        "change": "固定数据集 SHA-256 + 同输入 v1/v2 比较 + 逐条断言；人工语义校准独立进行。"
+      }
+    ],
+    "acceptance": "绑定用例全部通过；安全边界不得因改造退化。语义效果需在线 Judge 与真实人工标注后另行验收。"
+  }
+]

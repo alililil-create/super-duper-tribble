@@ -1,0 +1,11 @@
+[project]
+name = "shop-agent-lab"
+version = "1.0.0"
+description = "商城智能体测评体系与改造设计课程项目"
+requires-python = ">=3.11"
+dependencies = ["fastapi>=0.115,<1", "uvicorn>=0.30,<1", "langgraph>=1,<2", "langchain-openai>=1,<2", "httpx>=0.27,<1"]
+[dependency-groups]
+dev = ["pytest>=8,<10"]
+[tool.pytest.ini_options]
+pythonpath = ["."]
+testpaths = ["tests"]
